@@ -1,0 +1,38 @@
+{
+  "name": "uniforms-rmwc",
+  "version": "1.0",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "description": "React wrapper Material Design (Web) Components for uniforms.",
+  "repository": "https://github.com/varunalex/uniforms-rmwc",
+  "bugs": "https://github.com/varunalex/uniforms-rmwc/issues",
+  "keywords": [
+    "form",
+    "forms",
+    "meteor",
+    "react",
+    "react-component",
+    "rmwc",
+    "schema",
+    "validation"
+  ],
+  "files": [
+    "*.js",
+    "src/"
+  ],
+  "peerDependencies": {
+    "rmwc": "^1.6.4",
+    "react": "^16.0.0 || ^15.0.0 || ^0.14.0",
+    "uniforms": "^1.25.0-rc.3"
+  },
+  "devDependencies": {
+    
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.51",
+    "lodash": "^4.0.0",
+    "prop-types": "^15.6.1"
+  }
+}
