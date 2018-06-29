@@ -37,6 +37,16 @@ This component is generated from TextFieldHelper rmwc component. If you need to 
 ```jsx
 <ErrorField name="Name" helperText="Hello from helper text..." />
 ```
+### Tasks
+ - [x] Text
+ - [x] Date
+ - [x] Number
+ - [x] ErrorField
+ - [x] Helpertext
+ - [ ] Bool
+ - [ ] Checkbox
+ - [ ] Nested
+ - [ ] List
 
 
 For more in depth documentation see: [https://github.com/vazco/uniforms/](https://github.com/vazco/uniforms/).
