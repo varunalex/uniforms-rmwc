@@ -1,9 +1,7 @@
 import React from 'react';
-import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
+import { TextField, TextFieldIcon } from 'rmwc/TextField';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
-
-7;
 
 const Text = ({
   disabled,
@@ -11,6 +9,7 @@ const Text = ({
   inputRef,
   label,
   error,
+  helperText,
   name,
   onChange,
   placeholder,
