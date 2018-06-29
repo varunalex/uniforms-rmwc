@@ -5,9 +5,13 @@ import filterDOMProps from 'uniforms/filterDOMProps';
 import nothing from 'uniforms/nothing';
 
 const Error = ({
-  children, error, errorMessage, ...props
+  children, error, errorMessage, helperText, ...props
 }) =>
-  (!error ? nothing : (
+  (!error ? (
+    <TextFieldHelperText>
+      {children || helperText}
+    </TextFieldHelperText>
+  ) : (
     <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
       {children || errorMessage}
     </TextFieldHelperText>
