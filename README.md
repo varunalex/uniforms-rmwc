@@ -37,13 +37,28 @@ This component is generated from TextFieldHelper rmwc component. If you need to 
 ```jsx
 <ErrorField name="Name" helperText="Hello from helper text..." />
 ```
+### SubmitField
+SubmitField are generated from Bottons.
+Submit button value could be pass through the value prop. ButtonIcon 'use' prop should be use as buttonIcon (prop) in SubmitField component.
+```jsx
+<SubmitField value="Submit" buttonIcon="favorite" />
+```
+### BoolField
+BoolField are generated from CheckBoxes. If you need to use indeterminate prop, you should assign true string instead of javascript true value or just put indeterminate prop.
+```jsx
+<BoolField name="bool" indeterminate="true" />
+```
+### SelectField
+Read more about option patterns : [https://jamesmfriedman.github.io/rmwc/select-menus](https://jamesmfriedman.github.io/rmwc/select-menus)
 ### Tasks
  - [x] Text
  - [x] Date
  - [x] Number
  - [x] ErrorField
  - [x] Helpertext
- - [ ] Bool
+ - [x] Submit
+ - [x] Select
+ - [x] Bool
  - [ ] Checkbox
  - [ ] Nested
  - [ ] List
