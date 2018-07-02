@@ -17,22 +17,20 @@ const renderCheckboxes = ({
   allowedValues, disabled, fieldType, id, indeterminate, name, onChange, transform, value, label,
 }) =>
   allowedValues.map(item =>
-    (<div key={item}>
-      <Checkbox
-        checked={fieldType === Array ? value.includes(item) : value === item}
-        disabled={disabled}
-        id={`${id}-${item}`}
-        label={label}
-        indeterminate={indeterminate}
-        name={name}
-        onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
-        type="checkbox"
-      >
-        <label htmlFor={`${id}-${item}`}>
-          {transform ? transform(item) : item}
-        </label>
-      </Checkbox>
-    </div>));
+    (
+      <div key={item}>
+        <Checkbox
+          checked={fieldType === Array ? value.includes(item) : value === item}
+          disabled={disabled}
+          id={`${id}-${item}`}
+          label={label}
+          indeterminate={indeterminate}
+          name={name}
+          onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
+          type="checkbox"
+        />
+      </div>
+    ));
 const renderSelect = ({
   allowedValues,
   disabled,
