@@ -50,18 +50,32 @@ BoolField are generated from CheckBoxes. If you need to use indeterminate prop, 
 ```
 ### SelectField
 Read more about option patterns : [https://jamesmfriedman.github.io/rmwc/select-menus](https://jamesmfriedman.github.io/rmwc/select-menus)
+### ListAddField
+To change Add button text pass 'placeholder' prop with your text to the component.
+To change Icon pass 'buttonIcon' prop with icon name to the component.
+### ListDelField
+To change Remove button text pass 'placeholder' prop with your text to the component.
+To change Icon pass 'buttonIcon' prop with icon name to the component.
 ### Tasks
- - [x] Text
- - [x] Date
- - [x] Number
+ - [x] Auto[field/form]
+ - [x] BaseForm
+ - [x] BoolField
+ - [x] DateField
  - [x] ErrorField
+ - [ ] ErrorsField
  - [x] Helpertext
- - [x] Submit
- - [x] Select
- - [x] Bool
- - [ ] Checkbox
- - [ ] Nested
- - [ ] List
+ - [x] HiddenField
+ - [x] ListFields
+ - [x] LongTextField (Removed)
+ - [x] NestedField
+ - [x] NumberField
+ - [x] QuickForm
+ - [x] RadioField
+ - [x] SelectField
+ - [x] SubmitField
+ - [x] TextField
+ - [x] ValidationForm
+ - [x] ValidationQuickForm
 
 
 For more in depth documentation see: [https://github.com/vazco/uniforms/](https://github.com/vazco/uniforms/).
