@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install uniforms-rmwc 
+$ npm install uniforms-rmwc --save
 ```
 ## Spacial Usage Examples
 
