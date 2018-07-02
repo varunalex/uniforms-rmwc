@@ -1,24 +1,32 @@
-import React          from 'react';
-import cloneDeep      from 'lodash/cloneDeep';
-import connectField   from 'uniforms/connectField';
+import React from 'react';
+import { Button, ButtonIcon } from 'rmwc/Button';
+import cloneDeep from 'lodash/cloneDeep';
+import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
 const ListAdd = ({
-    disabled,
-    parent,
-    value,
-    ...props
+  buttonIcon,
+  disabled,
+  parent,
+  value,
+  placeholder,
+  ...props
 }) => {
-    const limitNotReached = !disabled && !(parent.maxCount <= value.length);
+  const limitNotReached = !disabled && !(parent.maxCount <= parent.value.length);
 
-    return (
-        <span
-            {...filterDOMProps(props)}
-            onClick={() => limitNotReached && parent.onChange(parent.value.concat([cloneDeep(value)]))}
-        >
-            +
-        </span>
-    );
+  return (
+
+    <Button
+      type="button"
+      disabled={!limitNotReached}
+      onClick={() => limitNotReached && parent.onChange(parent.value.concat([cloneDeep(value)]))}
+      {...filterDOMProps(props)}
+    >
+      <ButtonIcon use={buttonIcon || 'add_circle'} />
+      {placeholder || 'Add'}
+    </Button>
+
+  );
 };
 
-export default connectField(ListAdd, {includeParent: true, initialValue: false});
+export default connectField(ListAdd, { includeParent: true, initialValue: false });
