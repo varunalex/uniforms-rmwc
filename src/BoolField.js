@@ -20,17 +20,12 @@ const Bool = ({
         checked={value}
         disabled={disabled}
         id={id}
+        label={label}
         indeterminate={indeterminate}
         name={name}
         onChange={() => disabled || onChange(!value)}
         ref={inputRef}
         type="checkbox"
-      >
-        {label && (
-        <label htmlFor={id}>
-          {label}
-        </label>
-            )}
-      </Checkbox>
+      />
     </div>);
 export default connectField(Bool);
