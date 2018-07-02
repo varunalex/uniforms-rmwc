@@ -2,7 +2,10 @@
   "name": "uniforms-rmwc",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib"
+  },
   "module": "src/index.js",
   "jsnext:main": "src/index.js",
   "description": "React wrapper Material Design (Web) Components for uniforms.",
@@ -28,7 +31,11 @@
     "uniforms": "^1.25.0-rc.3"
   },
   "devDependencies": {
-    
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.51",
