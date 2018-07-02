@@ -2,7 +2,7 @@
   "name": "uniforms-rmwc",
   "version": "1.1.2",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir lib"
   },
