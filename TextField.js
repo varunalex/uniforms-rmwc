@@ -26,32 +26,47 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 var Text = function Text(_ref) {
   var disabled = _ref.disabled,
+      error = _ref.error,
+      errorMessage = _ref.errorMessage,
       id = _ref.id,
+      helpertext = _ref.helpertext,
       inputRef = _ref.inputRef,
       label = _ref.label,
-      error = _ref.error,
-      helperText = _ref.helperText,
       name = _ref.name,
       _onChange = _ref.onChange,
       placeholder = _ref.placeholder,
+      showInlineError = _ref.showInlineError,
       type = _ref.type,
       value = _ref.value,
-      props = _objectWithoutProperties(_ref, ['disabled', 'id', 'inputRef', 'label', 'error', 'helperText', 'name', 'onChange', 'placeholder', 'type', 'value']);
+      props = _objectWithoutProperties(_ref, ['disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputRef', 'label', 'name', 'onChange', 'placeholder', 'showInlineError', 'type', 'value']);
 
-  return _react2.default.createElement(_TextField.TextField, _extends({
-    disabled: disabled,
-    id: id,
-    invalid: !!error,
-    label: label,
-    name: name,
-    onChange: function onChange(event) {
-      return _onChange(event.target.value);
-    },
-    placeholder: placeholder,
-    ref: inputRef,
-    type: type,
-    value: value
-  }, (0, _filterDOMProps2.default)(props)));
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_TextField.TextField, _extends({
+      disabled: disabled,
+      id: id,
+      invalid: !!error,
+      label: label,
+      name: name,
+      onChange: function onChange(event) {
+        return _onChange(event.target.value);
+      },
+      placeholder: placeholder,
+      ref: inputRef,
+      type: type,
+      value: value
+    }, (0, _filterDOMProps2.default)(props))),
+    !error ? _react2.default.createElement(
+      _TextField.TextFieldHelperText,
+      null,
+      helpertext
+    ) : _react2.default.createElement(
+      _TextField.TextFieldHelperText,
+      _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
+      errorMessage
+    )
+  );
 };
 Text.defaultProps = { type: 'text' };
 

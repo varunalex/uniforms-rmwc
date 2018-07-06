@@ -48,11 +48,6 @@ var List = function List(_ref) {
   return _react2.default.createElement(
     _List.List,
     (0, _filterDOMProps2.default)(props),
-    label && _react2.default.createElement(
-      'label',
-      null,
-      label
-    ),
     children ? value.map(function (item, index) {
       return _react.Children.map(children, function (child) {
         return _react2.default.cloneElement(child, {

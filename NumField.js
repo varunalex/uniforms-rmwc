@@ -40,7 +40,10 @@ var Num_ = function Num_(_ref) {
   var decimal = _ref.decimal,
       disabled = _ref.disabled,
       error = _ref.error,
+      errorMessage = _ref.errorMessage,
       id = _ref.id,
+      helpertext = _ref.helpertext,
+      inputProps = _ref.inputProps,
       inputRef = _ref.inputRef,
       label = _ref.label,
       max = _ref.max,
@@ -48,25 +51,38 @@ var Num_ = function Num_(_ref) {
       name = _ref.name,
       onChange = _ref.onChange,
       placeholder = _ref.placeholder,
+      showInlineError = _ref.showInlineError,
       step = _ref.step,
       value = _ref.value,
-      props = _objectWithoutProperties(_ref, ['decimal', 'disabled', 'error', 'id', 'inputRef', 'label', 'max', 'min', 'name', 'onChange', 'placeholder', 'step', 'value']);
+      props = _objectWithoutProperties(_ref, ['decimal', 'disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputProps', 'inputRef', 'label', 'max', 'min', 'name', 'onChange', 'placeholder', 'showInlineError', 'step', 'value']);
 
-  return _react2.default.createElement(_TextField.TextField, _extends({
-    disabled: disabled,
-    id: id,
-    invalid: !!error,
-    max: max,
-    min: min,
-    name: name,
-    label: label,
-    onChange: onChange,
-    placeholder: placeholder,
-    ref: inputRef,
-    step: step || (decimal ? 0.01 : 1),
-    type: 'number',
-    value: value
-  }, (0, _filterDOMProps2.default)(props)));
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_TextField.TextField, _extends({
+      disabled: disabled,
+      id: id,
+      invalid: !!error,
+      max: max,
+      min: min,
+      name: name,
+      label: label,
+      onChange: onChange,
+      placeholder: placeholder,
+      ref: inputRef,
+      type: 'number',
+      value: value
+    }, (0, _filterDOMProps2.default)(props))),
+    !error ? _react2.default.createElement(
+      _TextField.TextFieldHelperText,
+      null,
+      helpertext
+    ) : _react2.default.createElement(
+      _TextField.TextFieldHelperText,
+      _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
+      errorMessage
+    )
+  );
 };
 
 // NOTE: React < 16 workaround. Make it optional?
