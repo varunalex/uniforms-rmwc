@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, TextFieldIcon } from 'rmwc/TextField';
+import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
@@ -9,7 +9,10 @@ const Num_ = ({
   decimal,
   disabled,
   error,
+  errorMessage,
   id,
+  helpertext,
+  inputProps,
   inputRef,
   label,
   max,
@@ -17,27 +20,38 @@ const Num_ = ({
   name,
   onChange,
   placeholder,
+  showInlineError,
   step,
   value,
   ...props
 }) =>
   (
-    <TextField
-      disabled={disabled}
-      id={id}
-      invalid={!!error}
-      max={max}
-      min={min}
-      name={name}
-      label={label}
-      onChange={onChange}
-      placeholder={placeholder}
-      ref={inputRef}
-      step={step || (decimal ? 0.01 : 1)}
-      type="number"
-      value={value}
-      {...filterDOMProps(props)}
-    />
+    <div>
+      <TextField
+        disabled={disabled}
+        id={id}
+        invalid={!!error}
+        max={max}
+        min={min}
+        name={name}
+        label={label}
+        onChange={onChange}
+        placeholder={placeholder}
+        ref={inputRef}
+        type="number"
+        value={value}
+        {...filterDOMProps(props)}
+      />
+      {!error ? (
+        <TextFieldHelperText>
+          {helpertext}
+        </TextFieldHelperText>
+      ) : (
+        <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
+          {errorMessage}
+        </TextFieldHelperText>
+        )}
+    </div>
   )
 ;
 

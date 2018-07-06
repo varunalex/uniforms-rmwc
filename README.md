@@ -26,6 +26,12 @@ This props should put at the end of the assigned props or should assign true or 
  // In this case we can use un-assign props at a any postion of the component
  <TextField name="name" textarea="true" placeholder="Name" />
 ```
+### HelperText
+Prop helpertext attribute should be lowercase 'helpertext'
+```jsx
+ <TextField name="name" helpertext="Type your name" />
+
+```
 ### DateField
 In order to remove default text/placeholder present in html5 input element of type=date (WebKit only), use this CSS segment
 ```css
@@ -33,7 +39,7 @@ input::-webkit-datetime-edit{ color: transparent; }
 input:focus::-webkit-datetime-edit{ color: #000; }
 ```
 ### ErrorField
-This component is generated from TextFieldHelper rmwc component. If you need to use helper text for a specific field, you should pass helperText prop to the labeled ErrorField
+This component is generated from TextFieldHelper rmwc component. If you need to use helper text with ErrorField for a specific field, you should pass helperText prop to the labeled ErrorField
 ```jsx
 <ErrorField name="Name" helperText="Hello from helper text..." />
 ```

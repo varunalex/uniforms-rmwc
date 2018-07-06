@@ -18,11 +18,11 @@ const List = ({
 }) =>
   (
     <ListRMWC {...filterDOMProps(props)}>
-      {label && (
+      {/* {label && (
       <label>
-        {label}
+        {itemProps}
       </label>
-        )}
+        )} */}
 
       {children ? (
             value.map((item, index) =>
