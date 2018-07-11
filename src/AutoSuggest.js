@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
+import Autosuggest from 'react-autosuggest';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
@@ -17,16 +18,22 @@ const Text = ({
   showInlineError,
   type,
   value,
+  suggestions,
+  onSuggestionsFetchRequested,
+  onSuggestionsClearRequested,
+  getSuggestionValue,
+  renderSuggestion,
+  inputProps,
   ...props
 }) => {
-  if (type === 'hidden') {
-    return (
-      <input
+  const renderInput = () => (
+    <span>
+      <TextField
+        name={name}
         disabled={disabled}
         id={id}
         invalid={!!error}
         label={label}
-        name={name}
         onChange={event => onChange(event.target.value)}
         placeholder={placeholder}
         ref={inputRef}
@@ -34,22 +41,35 @@ const Text = ({
         value={value}
         {...filterDOMProps(props)}
       />
-    );
-  }
+    </span>
+  );
+  const suggestion = [
+    {
+      text: 'Apple',
+    },
+    {
+      text: 'Banana',
+    },
+    {
+      text: 'Cherry',
+    },
+    {
+      text: 'Grapefruit',
+    },
+    {
+      text: 'Lemon',
+    },
+  ];
   return (
     <div>
-      <TextField
-        disabled={disabled}
-        id={id}
-        invalid={!!error}
-        label={label}
-        name={name}
-        onChange={event => onChange(event.target.value)}
-        placeholder={placeholder}
-        ref={inputRef}
-        type={type}
-        value={value}
-        {...filterDOMProps(props)}
+      <Autosuggest
+        renderInputComponent={renderInput}
+        suggestions={suggestion}
+        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={onSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
       />
       {!error ? (
         <TextFieldHelperText>
@@ -59,7 +79,7 @@ const Text = ({
         <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
           {errorMessage}
         </TextFieldHelperText>
-      )}
+        )}
     </div>
   );
 };
