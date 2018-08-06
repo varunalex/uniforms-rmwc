@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox } from 'rmwc/Checkbox';
-import { Select as SelectRMWC } from 'rmwc/Select';
+import { Select } from 'rmwc/Select';
 import { TextFieldHelperText } from 'rmwc/TextField';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
@@ -31,6 +31,7 @@ const renderCheckboxes = ({
   onChange,
   required,
   value,
+  ...props
 }) =>
   allowedValues.map(item =>
     (
@@ -45,6 +46,7 @@ const renderCheckboxes = ({
             name={name}
             onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
             type="checkbox"
+            {...filterDOMProps(props)}
           />
         </div>
         {!error ? (
@@ -79,10 +81,12 @@ const renderSelect = ({
   showInlineError,
   transform,
   value,
+  outlined,
+  ...props
 }) =>
   (
     <div>
-      <SelectRMWC
+      <Select
         disabled={disabled}
         id={id}
         name={name}
@@ -92,6 +96,8 @@ const renderSelect = ({
         value={value}
         placeholder={placeholder}
         options={allowedValues}
+        outlined={outlined}
+        {...filterDOMProps(props)}
       />
       {!error ? (
         <TextFieldHelperText>
@@ -104,7 +110,7 @@ const renderSelect = ({
         )}
     </div>
   );
-const Select = ({
+const Selectbox = ({
   allowedValues,
   checkboxes,
   disabled,
@@ -121,17 +127,17 @@ const Select = ({
   ...props
 }) =>
   (
-    <div {...filterDOMProps(props)}>
+    <div>
       {/* TODO: Better handling of these props. */}
       {/* eslint-disable max-len */}
       {checkboxes
             ? renderCheckboxes({
-allowedValues, disabled, id, name, onChange, transform, value, fieldType,
+          allowedValues, disabled, id, name, onChange, transform, value, fieldType, ...filterDOMProps(props),
 })
             : renderSelect({
-allowedValues, disabled, id, name, onChange, transform, value, inputRef, label, placeholder, required,
+          allowedValues, disabled, id, name, onChange, transform, value, inputRef, label, placeholder, required, ...filterDOMProps(props),
 })
         }
       {/* eslint-enable */}
     </div>);
-export default connectField(Select);
+export default connectField(Selectbox);

@@ -75,7 +75,7 @@ var Text = function Text(_ref) {
     }, (0, _filterDOMProps2.default)(props))),
     !error ? _react2.default.createElement(
       _TextField.TextFieldHelperText,
-      null,
+      { persistent: true, styles: 'margin: -20px; padding: -20px' },
       helpertext
     ) : _react2.default.createElement(
       _TextField.TextFieldHelperText,

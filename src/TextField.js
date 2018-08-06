@@ -52,7 +52,7 @@ const Text = ({
         {...filterDOMProps(props)}
       />
       {!error ? (
-        <TextFieldHelperText>
+        <TextFieldHelperText persistent styles="margin: -20px; padding: -20px">
           {helpertext}
         </TextFieldHelperText>
       ) : (
