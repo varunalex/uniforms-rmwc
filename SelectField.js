@@ -54,7 +54,8 @@ var renderCheckboxes = function renderCheckboxes(_ref) {
       _onChange = _ref.onChange,
       required = _ref.required,
       value = _ref.value,
-      props = _objectWithoutProperties(_ref, ['allowedValues', 'appearance', 'disabled', 'error', 'errorMessage', 'fieldType', 'fullWidth', 'helpertext', 'id', 'inputRef', 'label', 'margin', 'name', 'onChange', 'required', 'value']);
+      withLeadingIcon = _ref.withLeadingIcon,
+      props = _objectWithoutProperties(_ref, ['allowedValues', 'appearance', 'disabled', 'error', 'errorMessage', 'fieldType', 'fullWidth', 'helpertext', 'id', 'inputRef', 'label', 'margin', 'name', 'onChange', 'required', 'value', 'withLeadingIcon']);
 
   return allowedValues.map(function (item) {
     return _react2.default.createElement(
@@ -73,7 +74,8 @@ var renderCheckboxes = function renderCheckboxes(_ref) {
           onChange: function onChange() {
             return _onChange(fieldType === Array ? xor(item, value) : item);
           },
-          type: 'checkbox'
+          type: 'checkbox',
+          withLeadingIcon: withLeadingIcon
         }, (0, _filterDOMProps2.default)(props)))
       ),
       !error ? _react2.default.createElement(

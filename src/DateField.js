@@ -25,6 +25,7 @@ const Date_ = ({
   onChange,
   placeholder,
   value,
+  withLeadingIcon,
   ...props
 }) =>
   (<TextField

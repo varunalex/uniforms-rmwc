@@ -17,6 +17,7 @@ const Text = ({
   showInlineError,
   type,
   value,
+  withLeadingIcon,
   ...props
 }) => {
   if (type === 'hidden') {
@@ -46,6 +47,7 @@ const Text = ({
         name={name}
         onChange={event => onChange(event.target.value)}
         placeholder={placeholder}
+        withLeadingIcon={withLeadingIcon}
         ref={inputRef}
         type={type}
         value={value}

@@ -31,6 +31,7 @@ const renderCheckboxes = ({
   onChange,
   required,
   value,
+  withLeadingIcon,
   ...props
 }) =>
   allowedValues.map(item =>
@@ -46,6 +47,7 @@ const renderCheckboxes = ({
             name={name}
             onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
             type="checkbox"
+            withLeadingIcon={withLeadingIcon}
             {...filterDOMProps(props)}
           />
         </div>

@@ -23,6 +23,7 @@ const Num_ = ({
   showInlineError,
   step,
   value,
+  withLeadingIcon,
   ...props
 }) =>
   (
@@ -40,6 +41,7 @@ const Num_ = ({
         ref={inputRef}
         type="number"
         value={value}
+        withLeadingIcon={withLeadingIcon}
         {...filterDOMProps(props)}
       />
       {!error ? (
