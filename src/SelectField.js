@@ -1,7 +1,7 @@
 import React from 'react';
-import { Checkbox } from 'rmwc/Checkbox';
-import { Select } from 'rmwc/Select';
-import { TextFieldHelperText } from 'rmwc/TextField';
+import { Checkbox } from '@rmwc/checkbox';
+import { Select } from '@rmwc/select';
+import { TextFieldHelperText } from '@rmwc/textfield';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
@@ -23,6 +23,7 @@ const renderCheckboxes = ({
   fieldType,
   fullWidth,
   helpertext,
+  indeterminate,
   id,
   inputRef,
   label,
@@ -31,7 +32,6 @@ const renderCheckboxes = ({
   onChange,
   required,
   value,
-  withLeadingIcon,
   ...props
 }) =>
   allowedValues.map(item =>
@@ -47,7 +47,6 @@ const renderCheckboxes = ({
             name={name}
             onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
             type="checkbox"
-            withLeadingIcon={withLeadingIcon}
             {...filterDOMProps(props)}
           />
         </div>

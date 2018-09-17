@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, TextFieldIcon, TextFieldHelperText } from 'rmwc/TextField';
+import { TextField, TextFieldIcon, TextFieldHelperText } from '@rmwc/textfield';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
@@ -23,7 +23,6 @@ const Num_ = ({
   showInlineError,
   step,
   value,
-  withLeadingIcon,
   ...props
 }) =>
   (
@@ -41,7 +40,6 @@ const Num_ = ({
         ref={inputRef}
         type="number"
         value={value}
-        withLeadingIcon={withLeadingIcon}
         {...filterDOMProps(props)}
       />
       {!error ? (

@@ -10,7 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TextField = require('rmwc/TextField');
+var _textfield = require('@rmwc/textfield');
 
 var _connectField = require('uniforms/connectField');
 
@@ -38,8 +38,7 @@ var Text = function Text(_ref) {
       showInlineError = _ref.showInlineError,
       type = _ref.type,
       value = _ref.value,
-      withLeadingIcon = _ref.withLeadingIcon,
-      props = _objectWithoutProperties(_ref, ['disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputRef', 'label', 'name', 'onChange', 'placeholder', 'showInlineError', 'type', 'value', 'withLeadingIcon']);
+      props = _objectWithoutProperties(_ref, ['disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputRef', 'label', 'name', 'onChange', 'placeholder', 'showInlineError', 'type', 'value']);
 
   if (type === 'hidden') {
     return _react2.default.createElement('input', _extends({
@@ -60,7 +59,7 @@ var Text = function Text(_ref) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_TextField.TextField, _extends({
+    _react2.default.createElement(_textfield.TextField, _extends({
       disabled: disabled,
       id: id,
       invalid: !!error,
@@ -70,17 +69,16 @@ var Text = function Text(_ref) {
         return _onChange(event.target.value);
       },
       placeholder: placeholder,
-      withLeadingIcon: withLeadingIcon,
       ref: inputRef,
       type: type,
       value: value
     }, (0, _filterDOMProps2.default)(props))),
     !error ? _react2.default.createElement(
-      _TextField.TextFieldHelperText,
+      _textfield.TextFieldHelperText,
       null,
       helpertext
     ) : _react2.default.createElement(
-      _TextField.TextFieldHelperText,
+      _textfield.TextFieldHelperText,
       _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
       errorMessage
     )

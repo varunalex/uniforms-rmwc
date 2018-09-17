@@ -8,7 +8,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Checkbox = require('rmwc/Checkbox');
+var _checkbox = require('@rmwc/checkbox');
 
 var _connectField = require('uniforms/connectField');
 
@@ -36,7 +36,7 @@ var Bool = function Bool(_ref) {
   return _react2.default.createElement(
     'div',
     (0, _filterDOMProps2.default)(props),
-    _react2.default.createElement(_Checkbox.Checkbox, {
+    _react2.default.createElement(_checkbox.Checkbox, {
       checked: value,
       disabled: disabled,
       id: id,

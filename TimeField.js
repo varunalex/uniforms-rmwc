@@ -28,15 +28,15 @@ var dateFormat = function dateFormat(value) {
   return value && value.toISOString().slice(0, -8);
 };
 var dateParse = function dateParse(timestamp, onChange) {
-  var date = new Date(timestamp);
-  if (date.getFullYear() < 10000) {
-    onChange(date);
+  var time = new Date(timestamp);
+  if (time) {
+    onChange(time);
   } else if (isNaN(timestamp)) {
     onChange(undefined);
   }
 };
 
-var Date_ = function Date_(_ref) {
+var Time_ = function Time_(_ref) {
   var disabled = _ref.disabled,
       error = _ref.error,
       id = _ref.id,
@@ -62,9 +62,9 @@ var Date_ = function Date_(_ref) {
       return dateParse(event.target.valueAsNumber, _onChange);
     },
     ref: inputRef,
-    type: 'date'
+    type: 'time'
   }, (0, _filterDOMProps2.default)(props)));
 };
-Date_.displayName = 'Date';
+Time_.displayName = 'Time';
 
-exports.default = (0, _connectField2.default)(Date_);
+exports.default = (0, _connectField2.default)(Time_);

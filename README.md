@@ -7,7 +7,11 @@
 ```sh
 $ npm install uniforms-rmwc --save
 ```
+This version 2.x.x required rmwc 2.x.x
+If you are using rmwc ^1.8.x, make sure to use uniforms-rmwc 1.1.9
 ## Spacial Usage Examples
+
+```DateField, TimeField, HiddenField``` does not generate atomatically from ```AutoField```. You should define those feilds manually.
 
 ### TextField
 
@@ -33,6 +37,7 @@ Prop helpertext attribute should be lowercase 'helpertext'
 
 ```
 ### DateField
+** v1.9 **
 In order to remove default text/placeholder present in html5 input element of type=date (WebKit only), use this CSS segment
 ```css
 input::-webkit-datetime-edit{ color: transparent; }
@@ -80,6 +85,7 @@ To change Icon pass 'buttonIcon' prop with icon name to the component.
  - [x] SelectField
  - [x] SubmitField
  - [x] TextField
+ - [x] TimeField
  - [x] ValidationForm
  - [x] ValidationQuickForm
 

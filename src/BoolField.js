@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from 'rmwc/Checkbox';
+import { Checkbox } from '@rmwc/checkbox';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 

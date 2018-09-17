@@ -8,7 +8,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Radio = require('rmwc/Radio');
+var _radio = require('@rmwc/radio');
 
 var _connectField = require('uniforms/connectField');
 
@@ -44,7 +44,7 @@ var Radio = function Radio(_ref) {
     ),
     allowedValues.map(function (item) {
       return _react2.default.createElement(
-        _Radio.Radio,
+        _radio.Radio,
         {
           key: item,
           checked: item === value,

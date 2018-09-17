@@ -1,6 +1,6 @@
 import BaseField from 'uniforms/BaseField';
 import React from 'react';
-import { Button, ButtonIcon } from 'rmwc/Button';
+import { Button, ButtonIcon } from '@rmwc/button';
 import filterDOMProps from 'uniforms/filterDOMProps';
 
 const SubmitField = ({

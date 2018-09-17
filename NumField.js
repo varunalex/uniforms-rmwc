@@ -12,7 +12,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _TextField = require('rmwc/TextField');
+var _textfield = require('@rmwc/textfield');
 
 var _connectField = require('uniforms/connectField');
 
@@ -54,13 +54,12 @@ var Num_ = function Num_(_ref) {
       showInlineError = _ref.showInlineError,
       step = _ref.step,
       value = _ref.value,
-      withLeadingIcon = _ref.withLeadingIcon,
-      props = _objectWithoutProperties(_ref, ['decimal', 'disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputProps', 'inputRef', 'label', 'max', 'min', 'name', 'onChange', 'placeholder', 'showInlineError', 'step', 'value', 'withLeadingIcon']);
+      props = _objectWithoutProperties(_ref, ['decimal', 'disabled', 'error', 'errorMessage', 'id', 'helpertext', 'inputProps', 'inputRef', 'label', 'max', 'min', 'name', 'onChange', 'placeholder', 'showInlineError', 'step', 'value']);
 
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_TextField.TextField, _extends({
+    _react2.default.createElement(_textfield.TextField, _extends({
       disabled: disabled,
       id: id,
       invalid: !!error,
@@ -72,15 +71,14 @@ var Num_ = function Num_(_ref) {
       placeholder: placeholder,
       ref: inputRef,
       type: 'number',
-      value: value,
-      withLeadingIcon: withLeadingIcon
+      value: value
     }, (0, _filterDOMProps2.default)(props))),
     !error ? _react2.default.createElement(
-      _TextField.TextFieldHelperText,
+      _textfield.TextFieldHelperText,
       null,
       helpertext
     ) : _react2.default.createElement(
-      _TextField.TextFieldHelperText,
+      _textfield.TextFieldHelperText,
       _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
       errorMessage
     )

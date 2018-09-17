@@ -22,7 +22,7 @@ var _joinName = require('uniforms/joinName');
 
 var _joinName2 = _interopRequireDefault(_joinName);
 
-var _List = require('rmwc/List');
+var _list = require('@rmwc/list');
 
 var _ListAddField = require('./ListAddField');
 
@@ -46,7 +46,7 @@ var List = function List(_ref) {
       props = _objectWithoutProperties(_ref, ['children', 'initialCount', 'itemProps', 'label', 'name', 'value']);
 
   return _react2.default.createElement(
-    _List.List,
+    _list.List,
     (0, _filterDOMProps2.default)(props),
     children ? value.map(function (item, index) {
       return _react.Children.map(children, function (child) {

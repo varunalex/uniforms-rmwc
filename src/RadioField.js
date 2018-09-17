@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio as RadioRMWC } from 'rmwc/Radio';
+import { Radio as RadioRMWC } from '@rmwc/radio';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 

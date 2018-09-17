@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonIcon } from 'rmwc/Button';
+import { Button, ButtonIcon } from '@rmwc/button';
 import cloneDeep from 'lodash/cloneDeep';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';

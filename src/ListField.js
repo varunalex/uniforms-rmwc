@@ -2,7 +2,7 @@ import React, { Children } from 'react';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
 import joinName from 'uniforms/joinName';
-import { List as ListRMWC } from 'rmwc/List';
+import { List as ListRMWC } from '@rmwc/list';
 
 import ListAddField from './ListAddField';
 import ListItemField from './ListItemField';

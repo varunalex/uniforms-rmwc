@@ -5,15 +5,15 @@ import filterDOMProps from 'uniforms/filterDOMProps';
 
 const dateFormat = value => value && value.toISOString().slice(0, -8);
 const dateParse = (timestamp, onChange) => {
-  const date = new Date(timestamp);
-  if (date.getFullYear() < 10000) {
-    onChange(date);
+  const time = new Date(timestamp);
+  if (time) {
+    onChange(time);
   } else if (isNaN(timestamp)) {
     onChange(undefined);
   }
 };
 
-const Date_ = ({
+const Time_ = ({
   disabled,
   error,
   id,
@@ -37,10 +37,10 @@ const Date_ = ({
     name={name}
     onChange={event => dateParse(event.target.valueAsNumber, onChange)}
     ref={inputRef}
-    type="date"
+    type="time"
     {...filterDOMProps(props)}
   />
   );
-Date_.displayName = 'Date';
+Time_.displayName = 'Time';
 
-export default connectField(Date_);
+export default connectField(Time_);
