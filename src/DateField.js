@@ -16,31 +16,44 @@ const dateParse = (timestamp, onChange) => {
 const Date_ = ({
   disabled,
   error,
+  errorMessage,
   id,
   inputRef,
   label,
   max,
   min,
+  helpertext,
   name,
   onChange,
   placeholder,
   value,
   ...props
-}) =>
-  (<TextField
-    disabled={disabled}
-    id={id}
-    invalid={!!error}
-    label={label}
-    max={dateFormat(max)}
-    min={dateFormat(min)}
-    name={name}
-    onChange={event => dateParse(event.target.valueAsNumber, onChange)}
-    ref={inputRef}
-    type="date"
-    {...filterDOMProps(props)}
-  />
-  );
+}) => (
+  <div>
+    <TextField
+      disabled={disabled}
+      id={id}
+      invalid={!!error}
+      label={label}
+      max={dateFormat(max)}
+      min={dateFormat(min)}
+      name={name}
+      onChange={event => dateParse(event.target.valueAsNumber, onChange)}
+      ref={inputRef}
+      type="date"
+      {...filterDOMProps(props)}
+    />
+    {!error ? (
+      <TextFieldHelperText>
+        {helpertext}
+      </TextFieldHelperText>
+      ) : (
+        <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
+          {errorMessage}
+        </TextFieldHelperText>
+        )}
+  </div>
+);
 Date_.displayName = 'Date';
 
 export default connectField(Date_);

@@ -16,9 +16,11 @@ const dateParse = (timestamp, onChange) => {
 const Time_ = ({
   disabled,
   error,
+  errorMessage,
   id,
   inputRef,
   label,
+  helpertext,
   max,
   min,
   name,
@@ -27,19 +29,34 @@ const Time_ = ({
   value,
   ...props
 }) =>
-  (<TextField
-    disabled={disabled}
-    id={id}
-    invalid={!!error}
-    label={label}
-    max={dateFormat(max)}
-    min={dateFormat(min)}
-    name={name}
-    onChange={event => dateParse(event.target.valueAsNumber, onChange)}
-    ref={inputRef}
-    type="time"
-    {...filterDOMProps(props)}
-  />
+  (
+    <div>
+      <TextField
+        disabled={disabled}
+        id={id}
+        invalid={!!error}
+        label={label}
+        max={dateFormat(max)}
+        min={dateFormat(min)}
+        name={name}
+        onChange={event => dateParse(event.target.valueAsNumber, onChange)}
+        ref={inputRef}
+        type="time"
+        {...filterDOMProps(props)}
+      />
+      {
+  !error ? (
+    <TextFieldHelperText>
+      {helpertext}
+    </TextFieldHelperText>
+  ) : (
+    <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
+      {errorMessage}
+    </TextFieldHelperText>
+  )
+
+    }
+    </div>
   );
 Time_.displayName = 'Time';
 
