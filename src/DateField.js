@@ -35,8 +35,8 @@ const Date_ = ({
       id={id}
       invalid={!!error}
       label={label}
-      max={dateFormat(max)}
-      min={dateFormat(min)}
+      max={max}
+      min={min}
       name={name}
       onChange={event => dateParse(event.target.valueAsNumber, onChange)}
       ref={inputRef}
