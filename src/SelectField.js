@@ -50,15 +50,6 @@ const renderCheckboxes = ({
             {...filterDOMProps(props)}
           />
         </div>
-        {!error ? (
-          <TextFieldHelperText>
-            {helpertext}
-          </TextFieldHelperText>
-        ) : (
-          <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
-            {errorMessage}
-          </TextFieldHelperText>
-          )}
       </div>
     ));
 const renderSelect = ({
@@ -92,6 +83,7 @@ const renderSelect = ({
         id={id}
         name={name}
         label={label}
+	invalid={!!error}
         onChange={event => onChange(event.target.value)}
         ref={inputRef}
         value={value}
@@ -100,15 +92,6 @@ const renderSelect = ({
         outlined={outlined}
         {...filterDOMProps(props)}
       />
-      {!error ? (
-        <TextFieldHelperText>
-          {helpertext}
-        </TextFieldHelperText>
-      ) : (
-        <TextFieldHelperText persistent validationMsg {...filterDOMProps(props)}>
-          {errorMessage}
-        </TextFieldHelperText>
-        )}
     </div>
   );
 const Selectbox = ({

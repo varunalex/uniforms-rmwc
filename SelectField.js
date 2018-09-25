@@ -76,15 +76,6 @@ var renderCheckboxes = function renderCheckboxes(_ref) {
           },
           type: 'checkbox'
         }, (0, _filterDOMProps2.default)(props)))
-      ),
-      !error ? _react2.default.createElement(
-        _textfield.TextFieldHelperText,
-        null,
-        helpertext
-      ) : _react2.default.createElement(
-        _textfield.TextFieldHelperText,
-        _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
-        errorMessage
       )
     );
   });
@@ -121,6 +112,7 @@ var renderSelect = function renderSelect(_ref2) {
       id: id,
       name: name,
       label: label,
+      invalid: !!error,
       onChange: function onChange(event) {
         return _onChange2(event.target.value);
       },
@@ -129,16 +121,7 @@ var renderSelect = function renderSelect(_ref2) {
       placeholder: placeholder,
       options: allowedValues,
       outlined: outlined
-    }, (0, _filterDOMProps2.default)(props))),
-    !error ? _react2.default.createElement(
-      _textfield.TextFieldHelperText,
-      null,
-      helpertext
-    ) : _react2.default.createElement(
-      _textfield.TextFieldHelperText,
-      _extends({ persistent: true, validationMsg: true }, (0, _filterDOMProps2.default)(props)),
-      errorMessage
-    )
+    }, (0, _filterDOMProps2.default)(props)))
   );
 };
 var Selectbox = function Selectbox(_ref3) {

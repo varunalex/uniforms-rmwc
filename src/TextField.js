@@ -19,23 +19,6 @@ const Text = ({
   value,
   ...props
 }) => {
-  if (type === 'hidden') {
-    return (
-      <input
-        disabled={disabled}
-        id={id}
-        invalid={!!error}
-        label={label}
-        name={name}
-        onChange={event => onChange(event.target.value)}
-        placeholder={placeholder}
-        ref={inputRef}
-        type={type}
-        value={value}
-        {...filterDOMProps(props)}
-      />
-    );
-  }
   return (
     <div>
       <TextField
